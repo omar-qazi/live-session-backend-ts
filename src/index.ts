@@ -4,7 +4,7 @@ const color = require(`colors`);
 const morgan = require(`morgan`);
 const cors = require(`cors`);
 
-dotenv.config({path: `./config.env`});
+dotenv.config({ path: `./config.env` });
 
 //Middleware Setups
 const app = express();
@@ -16,8 +16,9 @@ app.use(morgan(`dev`));
 const room = require(`./api/routes/rooms`);
 app.use(`/api/v1/room`, room);
 
-
 //Service start on PORT
 const server = app.listen(process.env.PORT, () => {
-    console.log(color.yellow.inverse(`Service is running on port: ${process.env.PORT}`));
+  console.log(
+    color.yellow.inverse(`Service is running on port: ${process.env.PORT}`)
+  );
 });
